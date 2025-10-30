@@ -24,7 +24,9 @@ RUN npm ci --omit=dev --legacy-peer-deps \
 
 # Copiar servidor e artefatos necessários
 COPY server.js ./
-COPY build ./build
+# Copiar artefatos do stage de build
+COPY --from=builder /app/build ./build
+# (opcional) copiar public caso seu server.js use estáticos adicionais
 COPY public ./public
 
 # Variáveis padrão

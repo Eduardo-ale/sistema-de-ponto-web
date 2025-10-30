@@ -1,0 +1,31 @@
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build outputs
+build
+.dist
+.cache
+coverage
+*.log
+logs
+
+# VCS e IDE
+.git
+.gitignore
+.svn
+.hg
+.vscode
+.idea
+.DS_Store
+
+# Python virtualenv (existe no repo)
+venv
+
+# Outros
+.tmp
+.temp
+*.local
+.env
+.env.*

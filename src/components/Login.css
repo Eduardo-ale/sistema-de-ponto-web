@@ -1,0 +1,270 @@
+/* Estilos específicos para o componente Login */
+.login-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.login-form {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.login-form.dark {
+    background: rgba(17, 24, 39, 0.95);
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.input-group input {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-group input:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.1);
+}
+
+.input-icon {
+    transition: all 0.3s ease;
+}
+
+.input-icon.focused {
+    color: #3b82f6;
+    transform: scale(1.1);
+}
+
+.btn-login {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-login::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-login:hover::before {
+    left: 100%;
+}
+
+.btn-login:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.feedback-message {
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.floating-elements {
+    position: absolute;
+    animation: float 6s ease-in-out infinite;
+}
+
+.floating-elements:nth-child(2) {
+    animation-delay: 2s;
+}
+
+.floating-elements:nth-child(3) {
+    animation-delay: 4s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.glass-effect {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass-effect {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .login-sidebar {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .login-container {
+        padding: 1rem;
+    }
+
+    .login-form {
+        padding: 2rem 1.5rem;
+    }
+
+    .input-group input {
+        padding: 0.75rem 1rem 0.75rem 2.5rem;
+    }
+
+    .btn-login {
+        padding: 0.75rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-form {
+        padding: 1.5rem 1rem;
+        margin: 0.5rem;
+    }
+
+    .input-group {
+        margin-bottom: 1rem;
+    }
+
+    .btn-login {
+        padding: 0.875rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Modo escuro específico */
+.dark .login-container {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+}
+
+.dark .input-group input {
+    background-color: rgba(31, 41, 55, 0.8);
+    border-color: rgba(75, 85, 99, 0.5);
+    color: #f9fafb;
+}
+
+.dark .input-group input:focus {
+    background-color: rgba(31, 41, 55, 0.9);
+    border-color: #3b82f6;
+}
+
+.dark .input-group input::placeholder {
+    color: #9ca3af;
+}
+
+/* Animações de entrada */
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.8s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-in-right {
+    animation: slideInRight 0.8s ease-out;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Efeitos de hover aprimorados */
+.hover-lift {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.dark .hover-lift:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Gradientes customizados */
+.gradient-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.gradient-secondary {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.gradient-success {
+    background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+}
+
+.gradient-error {
+    background: linear-gradient(135deg, #f87171 0%, #ef4444 100%);
+}
+

@@ -6,7 +6,8 @@ WORKDIR /app
 
 # Instalar dependências apenas a partir dos manifests
 COPY package*.json ./
-RUN npm ci --legacy-peer-deps
+# Usar npm install para não depender estritamente do package-lock em ambiente de build
+RUN npm install --legacy-peer-deps
 
 # Copiar código e buildar
 COPY . .
